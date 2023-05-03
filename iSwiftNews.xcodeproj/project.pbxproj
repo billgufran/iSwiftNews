@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D1CCB33946C445C876AEC4 /* Pods_iSwiftNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10B5FB02E589831DD55C9C /* Pods_iSwiftNews.framework */; };
 		895074C42A02BA5F00C1505C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074C32A02BA5F00C1505C /* AppDelegate.swift */; };
 		895074C62A02BA5F00C1505C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074C52A02BA5F00C1505C /* SceneDelegate.swift */; };
 		895074C82A02BA5F00C1505C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074C72A02BA5F00C1505C /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D10B5FB02E589831DD55C9C /* Pods_iSwiftNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSwiftNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895074C02A02BA5F00C1505C /* iSwiftNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSwiftNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		895074C32A02BA5F00C1505C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		895074C52A02BA5F00C1505C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		895074CF2A02BA6000C1505C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		895074D22A02BA6000C1505C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		895074D42A02BA6000C1505C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.debug.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.debug.xcconfig"; sourceTree = "<group>"; };
+		B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.release.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D1CCB33946C445C876AEC4 /* Pods_iSwiftNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60AE949BACC4D79B460F7E48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */,
+				B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		775FFDBEB50900151D4AEDC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D10B5FB02E589831DD55C9C /* Pods_iSwiftNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		895074B72A02BA5F00C1505C = {
 			isa = PBXGroup;
 			children = (
 				895074C22A02BA5F00C1505C /* iSwiftNews */,
 				895074C12A02BA5F00C1505C /* Products */,
+				60AE949BACC4D79B460F7E48 /* Pods */,
+				775FFDBEB50900151D4AEDC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 895074D72A02BA6000C1505C /* Build configuration list for PBXNativeTarget "iSwiftNews" */;
 			buildPhases = (
+				5A8FA4F33BED953EB4633F27 /* [CP] Check Pods Manifest.lock */,
 				895074BC2A02BA5F00C1505C /* Sources */,
 				895074BD2A02BA5F00C1505C /* Frameworks */,
 				895074BE2A02BA5F00C1505C /* Resources */,
+				46471F262ABA73E590708E31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46471F262ABA73E590708E31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A8FA4F33BED953EB4633F27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iSwiftNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		895074BC2A02BA5F00C1505C /* Sources */ = {
@@ -220,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +355,7 @@
 		};
 		895074D82A02BA6000C1505C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +369,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +385,7 @@
 		};
 		895074D92A02BA6000C1505C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +399,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
