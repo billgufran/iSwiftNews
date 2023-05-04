@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsTableViewCell" customModule="iSwiftNews" customModuleProvider="target">
+            <connections>
+                <outlet property="bookmarkButton" destination="ArE-ay-acg" id="1l6-h8-CS5"/>
+                <outlet property="dateLabel" destination="jAg-wb-GF5" id="uuw-AP-fzr"/>
+                <outlet property="thumbImage" destination="4AF-Tc-iHy" id="7z2-VB-3PY"/>
+                <outlet property="titleLabel" destination="VCP-wr-69t" id="m9V-WF-OGI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_cell" rowHeight="105" id="3gG-Gg-F2Q">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gG-Gg-F2Q" id="0hg-Bv-QBX">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4AF-Tc-iHy">
+                        <rect key="frame" x="20" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="2oz-I4-Fnw"/>
+                            <constraint firstAttribute="height" constant="80" id="F8t-Ta-Z5V"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-wr-69t">
+                        <rect key="frame" x="110" y="9.9999999999999982" width="219" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Section" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAg-wb-GF5">
+                        <rect key="frame" x="110" y="38.333333333333336" width="103" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArE-ay-acg">
+                        <rect key="frame" x="337" y="15.333333333333336" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="nRT-zJ-Ohz"/>
+                            <constraint firstAttribute="height" constant="36" id="qxz-XT-MEN"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="bookmark" catalog="system"/>
+                        <connections>
+                            <action selector="bookmarkButtonTap:" destination="3gG-Gg-F2Q" eventType="touchUpInside" id="AMh-51-8R7"/>
+                            <action selector="bookmarkButtonTapped:" destination="3gG-Gg-F2Q" eventType="touchUpInside" id="Otw-5j-Vib"/>
+                            <action selector="bookmarkButtonTapped:" destination="-1" eventType="touchUpInside" id="utW-yX-cpP"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4AF-Tc-iHy" secondAttribute="bottom" constant="10" id="13m-ld-5jW"/>
+                    <constraint firstItem="VCP-wr-69t" firstAttribute="top" secondItem="4AF-Tc-iHy" secondAttribute="top" id="4xq-et-85K"/>
+                    <constraint firstItem="4AF-Tc-iHy" firstAttribute="top" secondItem="0hg-Bv-QBX" secondAttribute="top" constant="10" id="Mxd-3I-T1v"/>
+                    <constraint firstItem="ArE-ay-acg" firstAttribute="leading" secondItem="VCP-wr-69t" secondAttribute="trailing" constant="8" id="OSq-PE-ioT"/>
+                    <constraint firstItem="jAg-wb-GF5" firstAttribute="leading" secondItem="VCP-wr-69t" secondAttribute="leading" id="cau-ZY-mXq"/>
+                    <constraint firstAttribute="trailing" secondItem="ArE-ay-acg" secondAttribute="trailing" constant="20" id="eLa-w4-Jlg"/>
+                    <constraint firstAttribute="bottom" secondItem="jAg-wb-GF5" secondAttribute="bottom" priority="250" constant="10" id="nF2-OX-v8J"/>
+                    <constraint firstItem="jAg-wb-GF5" firstAttribute="top" secondItem="VCP-wr-69t" secondAttribute="bottom" constant="8" id="rD7-1W-oaQ"/>
+                    <constraint firstItem="VCP-wr-69t" firstAttribute="leading" secondItem="4AF-Tc-iHy" secondAttribute="trailing" constant="10" id="rZG-rF-xTh"/>
+                    <constraint firstItem="4AF-Tc-iHy" firstAttribute="leading" secondItem="0hg-Bv-QBX" secondAttribute="leading" constant="20" id="sWZ-0d-IoC"/>
+                    <constraint firstItem="ArE-ay-acg" firstAttribute="centerY" secondItem="0hg-Bv-QBX" secondAttribute="centerY" id="uOg-dm-paA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookmarkButton" destination="ArE-ay-acg" id="ema-Mb-TlU"/>
+                <outlet property="dateLabel" destination="jAg-wb-GF5" id="cgF-6C-h6f"/>
+                <outlet property="thumbImage" destination="4AF-Tc-iHy" id="11i-IM-eLX"/>
+                <outlet property="titleLabel" destination="VCP-wr-69t" id="ses-xX-824"/>
+            </connections>
+            <point key="canvasLocation" x="-51" y="79"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark" catalog="system" width="110" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
