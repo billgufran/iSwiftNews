@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsTableViewCell" customModule="iSwiftNews" customModuleProvider="target">
             <connections>
-                <outlet property="bookmarkButton" destination="ArE-ay-acg" id="1l6-h8-CS5"/>
-                <outlet property="dateLabel" destination="jAg-wb-GF5" id="uuw-AP-fzr"/>
-                <outlet property="thumbImage" destination="4AF-Tc-iHy" id="7z2-VB-3PY"/>
-                <outlet property="titleLabel" destination="VCP-wr-69t" id="m9V-WF-OGI"/>
+                <outlet property="bookmarkButton" destination="ArE-ay-acg" id="tzY-1X-bMI"/>
+                <outlet property="subtitleLabel" destination="jAg-wb-GF5" id="1ZE-g7-VPo"/>
+                <outlet property="thumbImage" destination="4AF-Tc-iHy" id="9yK-J7-dAV"/>
+                <outlet property="titleLabel" destination="VCP-wr-69t" id="RKB-EU-g3z"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -52,9 +52,7 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="bookmark" catalog="system"/>
                         <connections>
-                            <action selector="bookmarkButtonTap:" destination="3gG-Gg-F2Q" eventType="touchUpInside" id="AMh-51-8R7"/>
-                            <action selector="bookmarkButtonTapped:" destination="3gG-Gg-F2Q" eventType="touchUpInside" id="Otw-5j-Vib"/>
-                            <action selector="bookmarkButtonTapped:" destination="-1" eventType="touchUpInside" id="utW-yX-cpP"/>
+                            <action selector="bookmarkButtonTapped:" destination="-1" eventType="touchUpInside" id="m2F-oy-NF9"/>
                         </connections>
                     </button>
                 </subviews>
@@ -72,12 +70,6 @@
                     <constraint firstItem="ArE-ay-acg" firstAttribute="centerY" secondItem="0hg-Bv-QBX" secondAttribute="centerY" id="uOg-dm-paA"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="bookmarkButton" destination="ArE-ay-acg" id="ema-Mb-TlU"/>
-                <outlet property="dateLabel" destination="jAg-wb-GF5" id="cgF-6C-h6f"/>
-                <outlet property="thumbImage" destination="4AF-Tc-iHy" id="11i-IM-eLX"/>
-                <outlet property="titleLabel" destination="VCP-wr-69t" id="ses-xX-824"/>
-            </connections>
             <point key="canvasLocation" x="-51" y="79"/>
         </tableViewCell>
     </objects>
