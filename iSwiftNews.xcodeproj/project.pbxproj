@@ -15,6 +15,12 @@
 		895074CE2A02BA5F00C1505C /* iSwiftNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 895074CC2A02BA5F00C1505C /* iSwiftNews.xcdatamodeld */; };
 		895074D02A02BA6000C1505C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 895074CF2A02BA6000C1505C /* Assets.xcassets */; };
 		895074D32A02BA6000C1505C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895074D12A02BA6000C1505C /* LaunchScreen.storyboard */; };
+		895074DD2A0385AC00C1505C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895074DC2A0385AC00C1505C /* NewsTableViewCell.xib */; };
+		895074DF2A038AF300C1505C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074DE2A038AF300C1505C /* HomeViewController.swift */; };
+		895074E12A038D7000C1505C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E02A038D7000C1505C /* NewsTableViewCell.swift */; };
+		895074E42A03931300C1505C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E32A03931300C1505C /* ApiService.swift */; };
+		895074E92A03946B00C1505C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E82A03946B00C1505C /* News.swift */; };
+		895074EB2A03986400C1505C /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074EA2A03986400C1505C /* NewsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		895074CF2A02BA6000C1505C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		895074D22A02BA6000C1505C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		895074D42A02BA6000C1505C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		895074DC2A0385AC00C1505C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		895074DE2A038AF300C1505C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		895074E02A038D7000C1505C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		895074E32A03931300C1505C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		895074E82A03946B00C1505C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		895074EA2A03986400C1505C /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.debug.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.release.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,7 +62,6 @@
 				A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */,
 				B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +94,9 @@
 		895074C22A02BA5F00C1505C /* iSwiftNews */ = {
 			isa = PBXGroup;
 			children = (
+				895074E52A03944E00C1505C /* Models */,
+				895074E22A0392FF00C1505C /* Services */,
+				895074DB2A03857C00C1505C /* Home */,
 				895074C32A02BA5F00C1505C /* AppDelegate.swift */,
 				895074C52A02BA5F00C1505C /* SceneDelegate.swift */,
 				895074C72A02BA5F00C1505C /* ViewController.swift */,
@@ -93,6 +107,33 @@
 				895074CC2A02BA5F00C1505C /* iSwiftNews.xcdatamodeld */,
 			);
 			path = iSwiftNews;
+			sourceTree = "<group>";
+		};
+		895074DB2A03857C00C1505C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				895074DC2A0385AC00C1505C /* NewsTableViewCell.xib */,
+				895074DE2A038AF300C1505C /* HomeViewController.swift */,
+				895074E02A038D7000C1505C /* NewsTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		895074E22A0392FF00C1505C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				895074E32A03931300C1505C /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		895074E52A03944E00C1505C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				895074E82A03946B00C1505C /* News.swift */,
+				895074EA2A03986400C1505C /* NewsResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				895074D32A02BA6000C1505C /* LaunchScreen.storyboard in Resources */,
+				895074DD2A0385AC00C1505C /* NewsTableViewCell.xib in Resources */,
 				895074D02A02BA6000C1505C /* Assets.xcassets in Resources */,
 				895074CB2A02BA5F00C1505C /* Main.storyboard in Resources */,
 			);
@@ -210,9 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895074DF2A038AF300C1505C /* HomeViewController.swift in Sources */,
 				895074C82A02BA5F00C1505C /* ViewController.swift in Sources */,
+				895074E92A03946B00C1505C /* News.swift in Sources */,
+				895074E12A038D7000C1505C /* NewsTableViewCell.swift in Sources */,
 				895074C42A02BA5F00C1505C /* AppDelegate.swift in Sources */,
+				895074EB2A03986400C1505C /* NewsResponse.swift in Sources */,
 				895074CE2A02BA5F00C1505C /* iSwiftNews.xcdatamodeld in Sources */,
+				895074E42A03931300C1505C /* ApiService.swift in Sources */,
 				895074C62A02BA5F00C1505C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
