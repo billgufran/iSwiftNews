@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SDWebImage
 
+// MARK: - UIViewController
 class HomeViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
     var newsList: [News] = []
 
@@ -15,6 +18,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "news_cell")
+        tableView.dataSource = self
+        
         loadNews()
     }
     
@@ -24,8 +31,6 @@ class HomeViewController: UIViewController {
             
             switch result {
             case .success(let newsList):
-                //@todo remove print
-                print(newsList)
                 self.newsList = newsList
             case .failure(let error):
                 print(error.localizedDescription)
@@ -33,3 +38,32 @@ class HomeViewController: UIViewController {
         }
     }
 }
+
+// MARK: - extension UITableView
+// MARK: -- UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        newsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
+        
+        print(indexPath)
+        
+        let news = newsList[indexPath.row]
+        
+        cell.titleLabel.text = news.title
+        cell.subtitleLabel.text = self.concatLabels([news.date, news.author])
+        
+        if news.imageUrl != "" {
+            cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
+        } else {
+            cell.thumbImage.image = nil
+        }
+        
+        return cell
+    }
+}
+
+// MARK: -- UITableViewDataDelegate

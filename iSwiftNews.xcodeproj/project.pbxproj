@@ -21,6 +21,7 @@
 		895074E42A03931300C1505C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E32A03931300C1505C /* ApiService.swift */; };
 		895074E92A03946B00C1505C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E82A03946B00C1505C /* News.swift */; };
 		895074EB2A03986400C1505C /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074EA2A03986400C1505C /* NewsResponse.swift */; };
+		895074F12A04018800C1505C /* UITableViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074F02A04018800C1505C /* UITableViewDataSourceExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		895074E32A03931300C1505C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		895074E82A03946B00C1505C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		895074EA2A03986400C1505C /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
+		895074F02A04018800C1505C /* UITableViewDataSourceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSourceExtensions.swift; sourceTree = "<group>"; };
 		A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.debug.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.release.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 		895074C22A02BA5F00C1505C /* iSwiftNews */ = {
 			isa = PBXGroup;
 			children = (
+				895074EF2A04014D00C1505C /* Extensions */,
 				895074E52A03944E00C1505C /* Models */,
 				895074E22A0392FF00C1505C /* Services */,
 				895074DB2A03857C00C1505C /* Home */,
@@ -134,6 +137,14 @@
 				895074EA2A03986400C1505C /* NewsResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		895074EF2A04014D00C1505C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				895074F02A04018800C1505C /* UITableViewDataSourceExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895074F12A04018800C1505C /* UITableViewDataSourceExtensions.swift in Sources */,
 				895074DF2A038AF300C1505C /* HomeViewController.swift in Sources */,
 				895074C82A02BA5F00C1505C /* ViewController.swift in Sources */,
 				895074E92A03946B00C1505C /* News.swift in Sources */,
