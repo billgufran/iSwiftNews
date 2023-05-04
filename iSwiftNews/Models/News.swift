@@ -35,6 +35,37 @@ struct News: Decodable {
         self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
         self.description =  try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         self.imageUrl = try container.decodeIfPresent(String.self, forKey: .image) ?? ""
-        self.date =  try container.decodeIfPresent(String.self, forKey: .date) ?? ""
+        
+        if let date = try container.decodeIfPresent(String.self, forKey: .date) {
+            self.date = normalizeDate(date)
+        } else {
+            self.date = ""
+        }
     }
 }
+
+func toDate(
+    _ dateString: String,
+    format dateFormat: String = "yyyy-MM-dd'T'HH:mm:ssZ"
+) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = dateFormat
+    
+    return dateFormatter.date(from: dateString)
+}
+
+func toFormattedDateString(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    return dateFormatter.string(from: date)
+}
+
+func normalizeDate(_ dateString: String) -> String {
+    guard let date = toDate(dateString) else {
+        return ""
+    }
+    
+    return toFormattedDateString(date)
+}
+
