@@ -13,6 +13,9 @@ import SafariServices
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    weak var collectionView: UICollectionView?
+    weak var pageControl: UIPageControl?
+    
     var newsList: [News] = []
     
     override func viewDidLoad() {
@@ -68,8 +71,16 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "top_news_cell", for: indexPath) as! TopNewsTableViewCell
             
-            cell.subtitleLabel.text = "Top \(newsList.prefix(5).count) News of the day"
+            let newsCount = newsList.prefix(5).count
             
+            cell.delegate = self
+            
+            cell.subtitleLabel.text = "Top \(newsCount) News of the day"
+            
+            self.pageControl = cell.pageControl
+            cell.pageControl.numberOfPages = newsCount
+            
+            self.collectionView = cell.collectionView
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
             
@@ -94,6 +105,11 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: -- UITableViewDataDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // @todo find out how to disable if tableView is TopNewsTableViewCell, not by section number
+        if indexPath.section == 0 {
+            return
+        }
+        
         let news = newsList[indexPath.row]
         
         if let url = URL(string: news.url) {
@@ -149,5 +165,36 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         return CGSize(width: width, height: 256)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let news = newsList[indexPath.item]
+        
+        if let url = URL(string: news.url) {
+            let controller = SFSafariViewController(url: url)
+            present(controller, animated: true)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == self.collectionView {
+            let page = Int(scrollView.contentOffset.x / scrollView.frame.width)
+            pageControl?.currentPage = page
+        }
+    }
+}
+
+// MARK: - TopNewsTableViewCellDelegate
+extension HomeViewController: TopNewsTableViewCellDelegate {
+    func pageControlValueChanged(_ cell: TopNewsTableViewCell) {
+        let page = cell.pageControl.currentPage
+        collectionView?.scrollToItem(
+            at: IndexPath(item: page, section: 0),
+            at: .centeredHorizontally,
+            animated: true
+        )
     }
 }
