@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
             switch result {
             case .success(let newsList):
                 self.newsList = newsList
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -43,18 +44,16 @@ class HomeViewController: UIViewController {
 // MARK: -- UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        newsList.count
+        return newsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
         
-        print(indexPath)
-        
         let news = newsList[indexPath.row]
         
         cell.titleLabel.text = news.title
-        cell.subtitleLabel.text = self.concatLabels([news.date, news.author])
+        cell.subtitleLabel.text = self.concatLabels([news.date, news.source])
         
         if news.imageUrl != "" {
             cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
