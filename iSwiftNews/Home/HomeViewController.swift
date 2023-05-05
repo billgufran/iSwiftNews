@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SafariServices
 
 // MARK: - UIViewController
 class HomeViewController: UIViewController {
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
         
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "news_cell")
         tableView.dataSource = self
+        tableView.delegate = self
         
         loadNews()
     }
@@ -66,3 +68,15 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 // MARK: -- UITableViewDataDelegate
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news = newsList[indexPath.row]
+        
+        if let url = URL(string: news.url) {
+            let controller = SFSafariViewController(url: url)
+            present(controller, animated: true)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
