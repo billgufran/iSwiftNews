@@ -20,7 +20,10 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "news_cell")
+        tableView.register(
+            UINib(nibName: "NewsTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "news_cell"
+        )
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -45,25 +48,44 @@ class HomeViewController: UIViewController {
 // MARK: - extension UITableView
 // MARK: -- UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsList.count
+        switch section {
+        case 0:
+            return newsList.count > 0 ? 1 : 0
+        default:
+            return newsList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
-        
         let news = newsList[indexPath.row]
         
-        cell.titleLabel.text = news.title
-        cell.subtitleLabel.text = self.concatLabels([news.date, news.source])
-        
-        if news.imageUrl != "" {
-            cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
-        } else {
-            cell.thumbImage.image = nil
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "top_news_cell", for: indexPath) as! TopNewsTableViewCell
+            
+            cell.collectionView.dataSource = self
+//            cell.collectionView.delegate = self
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
+            
+            cell.titleLabel.text = news.title
+            cell.subtitleLabel.concatLabelsToText([news.date, news.source])
+            
+            if news.imageUrl != "" {
+                cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
+            } else {
+                cell.thumbImage.image = nil
+            }
+            
+            return cell
         }
-        
-        return cell
     }
 }
 
@@ -79,4 +101,31 @@ extension HomeViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
+}
+
+// MARK: - extension UICollectionView
+// MARK: -- UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        newsList.prefix(5).count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "top_news_collection_cell", for: indexPath) as! TopNewsCollectionViewCell
+        
+        let news = newsList[indexPath.item]
+        
+        cell.titleLabel.text = news.title
+        cell.subtitleLabel.concatLabelsToText([news.date, news.source])
+        
+        if news.imageUrl != "" {
+            cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
+        } else {
+            cell.thumbImage.image = nil
+        }
+        
+        return cell
+    }
+    
+    
 }

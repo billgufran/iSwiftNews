@@ -36,10 +36,7 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func setThumbImageStyles() {
-        if thumbImage != nil {
-            thumbImage.layer.cornerRadius = 8
-            thumbImage.layer.masksToBounds = true
-        }
+        thumbImage.rounded()
     }
     
     @IBAction func bookmarkButtonTapped(_ sender: Any) {
