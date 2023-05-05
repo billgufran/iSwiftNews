@@ -14,10 +14,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var newsList: [News] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         tableView.register(
@@ -68,8 +68,10 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "top_news_cell", for: indexPath) as! TopNewsTableViewCell
             
+            cell.subtitleLabel.text = "Top \(newsList.prefix(5).count) News of the day"
+            
             cell.collectionView.dataSource = self
-//            cell.collectionView.delegate = self
+            cell.collectionView.delegate = self
             
             return cell
         default:
@@ -128,4 +130,24 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     
+}
+
+// MARK: -- UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        return CGSize(width: width, height: 256)
+    }
 }
