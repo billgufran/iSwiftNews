@@ -16,7 +16,7 @@ class ReadingListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         tableView.register(
@@ -26,7 +26,12 @@ class ReadingListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.readingListAdded(_:)), name: .addReadingList, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.readingListAdded(_:)),
+            name: .addReadingList,
+            object: nil
+        )
         
         loadReadingList()
     }
@@ -51,7 +56,7 @@ extension ReadingListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
         
         let news = readingList[indexPath.row]
-                
+        
         cell.titleLabel.text = news.title
         cell.subtitleLabel.concatLabelsToText([news.publishedDate, news.source])
         cell.bookmarkButton.isHidden = true
