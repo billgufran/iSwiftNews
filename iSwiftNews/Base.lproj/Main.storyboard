@@ -56,12 +56,12 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-ul-Pfv">
-                                                            <rect key="frame" x="14" y="15.666666666666668" width="209" height="33.666666666666657"/>
+                                                            <rect key="frame" x="14" y="23.666666666666664" width="209" height="18"/>
                                                             <attributedString key="attributedText">
-                                                                <fragment content="Covid-19 News: See the latest coverage about Covid-19">
+                                                                <fragment content="Alert">
                                                                     <attributes>
-                                                                        <color key="NSColor" name="AccentColor"/>
-                                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                                        <color key="NSColor" systemColor="secondaryLabelColor"/>
+                                                                        <font key="NSFont" metaFont="system" size="15"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -69,7 +69,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemFillColor"/>
+                                                    <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                                     <constraints>
                                                         <constraint firstItem="1ey-ul-Pfv" firstAttribute="leading" secondItem="xkQ-vh-Jpd" secondAttribute="leading" constant="14" id="8yu-Ui-af4"/>
                                                         <constraint firstItem="qFo-yG-jz8" firstAttribute="centerY" secondItem="xkQ-vh-Jpd" secondAttribute="centerY" id="GPd-QH-zpc"/>
@@ -268,6 +268,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="quaternarySystemFillColor">
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -276,9 +279,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
