@@ -26,6 +26,8 @@
 		89BE6E332A0544E200ED0E13 /* TopNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E322A0544E200ED0E13 /* TopNewsCollectionViewCell.swift */; };
 		89BE6E372A05579C00ED0E13 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E362A05579C00ED0E13 /* UILabelExtensions.swift */; };
 		89BE6E392A055A1000ED0E13 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E382A055A1000ED0E13 /* UIImageViewExtensions.swift */; };
+		89BE6E3C2A05E55E00ED0E13 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E3B2A05E55E00ED0E13 /* CoreDataStorage.swift */; };
+		89BE6E3E2A05EBD000ED0E13 /* NSNotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E3D2A05EBD000ED0E13 /* NSNotificationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		89BE6E322A0544E200ED0E13 /* TopNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		89BE6E362A05579C00ED0E13 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		89BE6E382A055A1000ED0E13 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		89BE6E3B2A05E55E00ED0E13 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		89BE6E3D2A05EBD000ED0E13 /* NSNotificationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationExtensions.swift; sourceTree = "<group>"; };
 		A72924D2036AEAFE9414FB5B /* Pods-iSwiftNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.debug.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B27031BBE5C63438054F6C9E /* Pods-iSwiftNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSwiftNews.release.xcconfig"; path = "Target Support Files/Pods-iSwiftNews/Pods-iSwiftNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,7 @@
 		895074C22A02BA5F00C1505C /* iSwiftNews */ = {
 			isa = PBXGroup;
 			children = (
+				89BE6E3A2A05E4AB00ED0E13 /* Storage */,
 				895074EF2A04014D00C1505C /* Extensions */,
 				895074E52A03944E00C1505C /* Models */,
 				895074E22A0392FF00C1505C /* Services */,
@@ -155,8 +160,17 @@
 			children = (
 				89BE6E362A05579C00ED0E13 /* UILabelExtensions.swift */,
 				89BE6E382A055A1000ED0E13 /* UIImageViewExtensions.swift */,
+				89BE6E3D2A05EBD000ED0E13 /* NSNotificationExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89BE6E3A2A05E4AB00ED0E13 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				89BE6E3B2A05E55E00ED0E13 /* CoreDataStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BE6E3C2A05E55E00ED0E13 /* CoreDataStorage.swift in Sources */,
+				89BE6E3E2A05EBD000ED0E13 /* NSNotificationExtensions.swift in Sources */,
 				89BE6E392A055A1000ED0E13 /* UIImageViewExtensions.swift in Sources */,
 				89BE6E372A05579C00ED0E13 /* UILabelExtensions.swift in Sources */,
 				895074DF2A038AF300C1505C /* HomeViewController.swift in Sources */,

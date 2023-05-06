@@ -73,6 +73,7 @@ extension HomeViewController: UITableViewDataSource {
             
             let newsCount = newsList.prefix(5).count
             
+            // assign TopNewsTableViewCellDelegate
             cell.delegate = self
             
             cell.subtitleLabel.text = "Top \(newsCount) News of the day"
@@ -88,8 +89,11 @@ extension HomeViewController: UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
             
+            // assign NewsTableViewCellDelegate
+            cell.delegate = self
+            
             cell.titleLabel.text = news.title
-            cell.subtitleLabel.concatLabelsToText([news.date, news.source])
+            cell.subtitleLabel.concatLabelsToText([news.publishedDate, news.source])
             
             if news.imageUrl != "" {
                 cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
@@ -134,7 +138,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let news = newsList[indexPath.item]
         
         cell.titleLabel.text = news.title
-        cell.subtitleLabel.concatLabelsToText([news.date, news.source])
+        cell.subtitleLabel.concatLabelsToText([news.publishedDate, news.source])
         
         if news.imageUrl != "" {
             cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
@@ -196,5 +200,26 @@ extension HomeViewController: TopNewsTableViewCellDelegate {
             at: .centeredHorizontally,
             animated: true
         )
+    }
+}
+
+// MARK: - NewsTableViewCellDelegate
+extension HomeViewController: NewsTableViewCellDelegate {
+    func cellBookmarkButtonTapped(_ cell: NewsTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let news = newsList[indexPath.row]
+            
+            CoreDataStorage.shared.addToReadingList(news: news)
+            
+            if #available(iOS 13.0, *) {
+                cell.bookmarkButton.setImage(
+                    UIImage(systemName: "bookmark.fill"), for: .normal
+                )
+            } else {
+                //@todo handle fallback on earlier versions
+            }
+            
+            cell.bookmarkButton.isEnabled = false
+        }
     }
 }

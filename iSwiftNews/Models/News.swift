@@ -14,7 +14,7 @@ struct News: Decodable {
     let title: String
     let description: String
     let imageUrl: String
-    let date: String
+    let publishedDate: String
     
     enum CodingKeys: String, CodingKey {
         case author
@@ -37,10 +37,28 @@ struct News: Decodable {
         self.imageUrl = try container.decodeIfPresent(String.self, forKey: .image) ?? ""
         
         if let date = try container.decodeIfPresent(String.self, forKey: .date) {
-            self.date = normalizeDate(date)
+            self.publishedDate = normalizeDate(date)
         } else {
-            self.date = ""
+            self.publishedDate = ""
         }
+    }
+    
+    init(
+        author: String,
+        url: String,
+        source: String,
+        title: String,
+        description: String,
+        imageUrl: String,
+        publishedDate: String
+    ) {
+        self.author = author
+        self.url = url
+        self.source = source
+        self.title = title
+        self.description = description
+        self.imageUrl = imageUrl
+        self.publishedDate = publishedDate
     }
 }
 

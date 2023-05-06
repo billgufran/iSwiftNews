@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="NewsData" representedClassName="NewsData" syncable="YES" codeGenerationType="class"/>
+    <entity name="NewsData" representedClassName="NewsData" syncable="YES" codeGenerationType="class">
+        <attribute name="addedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="newsDescription" optional="YES" attributeType="String"/>
+        <attribute name="publishedDate" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
 </model>
