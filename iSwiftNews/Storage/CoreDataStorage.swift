@@ -20,13 +20,14 @@ class CoreDataStorage {
         return appDelegate.persistentContainer.viewContext
     }()
     
-    let identifierKey = "url"
+    // news from `https://api.lil.software/news` has no unique ID, thus we use news url as an identifier, assuming each url is most likely unique
+    private let identifierKey = "url"
     
     func addToReadingList(news: News) {
         let newsData: NewsData
         
         let fetchRequest = NewsData.fetchRequest()
-        // news from `https://api.lil.software/news` has no unique ID, thus we use news url
+        
         fetchRequest.predicate = NSPredicate(format: "\(identifierKey) = '\(news.url)'")
         
         if let data = try? context.fetch(fetchRequest).first {
@@ -67,7 +68,7 @@ class CoreDataStorage {
     
     func deleteFromReadingList(id: String) {
         let fetchRequest = NewsData.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "\(identifierKey) = \(id)")
+        fetchRequest.predicate = NSPredicate(format: "\(identifierKey) = '\(id)'")
         
         if let data = try? context.fetch(fetchRequest).first {
             context.delete(data)
@@ -80,7 +81,7 @@ class CoreDataStorage {
     
     func isAddedToReadingList(id: String) -> Bool {
         let fetchRequest = NewsData.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "\(identifierKey) = \(id)")
+        fetchRequest.predicate = NSPredicate(format: "\(identifierKey) = '\(id)'")
         
         if (try? context.fetch(fetchRequest).first) != nil {
             return true
