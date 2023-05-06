@@ -11,17 +11,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reading-->
         <scene sceneID="OGp-Gd-blf">
             <objects>
-                <viewController id="3V3-ga-3Gr" sceneMemberID="viewController">
+                <viewController id="3V3-ga-3Gr" customClass="ReadingListViewController" customModule="iSwiftNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ggh-IU-33G">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4pQ-zK-8br">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VE1-at-cA9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4pQ-zK-8br" firstAttribute="leading" secondItem="VE1-at-cA9" secondAttribute="leading" id="8wY-d5-5Cc"/>
+                            <constraint firstItem="4pQ-zK-8br" firstAttribute="top" secondItem="VE1-at-cA9" secondAttribute="top" id="JJd-ye-v8C"/>
+                            <constraint firstItem="VE1-at-cA9" firstAttribute="bottom" secondItem="4pQ-zK-8br" secondAttribute="bottom" id="KGz-ed-bg5"/>
+                            <constraint firstItem="VE1-at-cA9" firstAttribute="trailing" secondItem="4pQ-zK-8br" secondAttribute="trailing" id="dsr-zX-chS"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zBQ-Bw-pvw"/>
+                    <navigationItem key="navigationItem" title="Reading" id="zBQ-Bw-pvw"/>
+                    <connections>
+                        <outlet property="tableView" destination="4pQ-zK-8br" id="JlB-jq-uIu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1b-35-5fa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,11 +256,11 @@
             </objects>
             <point key="canvasLocation" x="-95.419847328244273" y="-962.67605633802816"/>
         </scene>
-        <!--Item 2-->
+        <!--Reading-->
         <scene sceneID="Suo-5k-lG3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GtH-3M-m43" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="cMR-oA-p0t"/>
+                    <tabBarItem key="tabBarItem" title="Reading" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="cMR-oA-p0t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c4p-T4-b3a">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -265,6 +280,8 @@
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

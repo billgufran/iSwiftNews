@@ -21,6 +21,7 @@
 		895074E42A03931300C1505C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E32A03931300C1505C /* ApiService.swift */; };
 		895074E92A03946B00C1505C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074E82A03946B00C1505C /* News.swift */; };
 		895074EB2A03986400C1505C /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895074EA2A03986400C1505C /* NewsResponse.swift */; };
+		89AB583F2A06712100321F22 /* ReadingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AB583E2A06712100321F22 /* ReadingListViewController.swift */; };
 		89BE6E2F2A05279800ED0E13 /* AlertInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E2E2A05279800ED0E13 /* AlertInfoView.swift */; };
 		89BE6E312A0540BA00ED0E13 /* TopNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E302A0540BA00ED0E13 /* TopNewsTableViewCell.swift */; };
 		89BE6E332A0544E200ED0E13 /* TopNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE6E322A0544E200ED0E13 /* TopNewsCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 		895074E32A03931300C1505C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		895074E82A03946B00C1505C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		895074EA2A03986400C1505C /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
+		89AB583E2A06712100321F22 /* ReadingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewController.swift; sourceTree = "<group>"; };
 		89BE6E2E2A05279800ED0E13 /* AlertInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfoView.swift; sourceTree = "<group>"; };
 		89BE6E302A0540BA00ED0E13 /* TopNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsTableViewCell.swift; sourceTree = "<group>"; };
 		89BE6E322A0544E200ED0E13 /* TopNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		895074C22A02BA5F00C1505C /* iSwiftNews */ = {
 			isa = PBXGroup;
 			children = (
+				89AB583D2A0670C500321F22 /* ReadingList */,
 				89BE6E3A2A05E4AB00ED0E13 /* Storage */,
 				895074EF2A04014D00C1505C /* Extensions */,
 				895074E52A03944E00C1505C /* Models */,
@@ -163,6 +166,14 @@
 				89BE6E3D2A05EBD000ED0E13 /* NSNotificationExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89AB583D2A0670C500321F22 /* ReadingList */ = {
+			isa = PBXGroup;
+			children = (
+				89AB583E2A06712100321F22 /* ReadingListViewController.swift */,
+			);
+			path = ReadingList;
 			sourceTree = "<group>";
 		};
 		89BE6E3A2A05E4AB00ED0E13 /* Storage */ = {
@@ -294,6 +305,7 @@
 				89BE6E392A055A1000ED0E13 /* UIImageViewExtensions.swift in Sources */,
 				89BE6E372A05579C00ED0E13 /* UILabelExtensions.swift in Sources */,
 				895074DF2A038AF300C1505C /* HomeViewController.swift in Sources */,
+				89AB583F2A06712100321F22 /* ReadingListViewController.swift in Sources */,
 				895074C82A02BA5F00C1505C /* ViewController.swift in Sources */,
 				895074E92A03946B00C1505C /* News.swift in Sources */,
 				895074E12A038D7000C1505C /* NewsTableViewCell.swift in Sources */,
