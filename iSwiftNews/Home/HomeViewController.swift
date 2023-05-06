@@ -13,6 +13,7 @@ import SafariServices
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    weak var refreshControl: UIRefreshControl!
     weak var collectionView: UICollectionView?
     weak var pageControl: UIPageControl?
     
@@ -23,12 +24,22 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        let refreshControl = UIRefreshControl()
+        
+        self.refreshControl = refreshControl
+        refreshControl.addTarget(
+            self,
+            action: #selector(self.refresh(_:)),
+            for: .valueChanged
+        )
+        
         tableView.register(
             UINib(nibName: "NewsTableViewCell", bundle: nil),
             forCellReuseIdentifier: "news_cell"
         )
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.refreshControl = refreshControl
         
         loadNews()
         
@@ -39,6 +50,12 @@ class HomeViewController: UIViewController {
             name: .deleteReadingList,
             object: nil
         )
+        
+        refreshControl.beginRefreshing()
+    }
+    
+    @objc func refresh(_ sender: Any) {
+        loadNews()
     }
     
     @objc func readingListItemDeleted(_ sender: Any) {
@@ -49,6 +66,8 @@ class HomeViewController: UIViewController {
     func loadNews() {
         ApiService.shared.loadNews { [weak self] result in
             guard let `self` = self else { return }
+            
+            self.refreshControl.endRefreshing()
             
             switch result {
             case .success(let newsList):
