@@ -30,7 +30,7 @@ class AlertInfoView: UIView {
         }
         
         self.layer.borderWidth = 1
-        self.layer.cornerRadius = 16
+        self.layer.cornerRadius = 14
         self.layer.masksToBounds = true
         self.layer.borderColor = borderColor
     }

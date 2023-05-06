@@ -83,13 +83,13 @@
                                                     </connections>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icC-lQ-ebu">
-                                                    <rect key="frame" x="20" y="106" width="139" height="27"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <rect key="frame" x="20" y="104" width="151.33333333333334" height="28.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lga-hX-zEE">
-                                                    <rect key="frame" x="0.0" y="184" width="393" height="256"/>
+                                                    <rect key="frame" x="0.0" y="168.66666666666663" width="393" height="256"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="256" id="ZJm-5e-byu"/>
@@ -146,7 +146,7 @@
                                                     </cells>
                                                 </collectionView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yFv-0e-NEr">
-                                                    <rect key="frame" x="20" y="440" width="353" height="81"/>
+                                                    <rect key="frame" x="20" y="424.66666666666669" width="353" height="96.333333333333314"/>
                                                     <color key="pageIndicatorTintColor" systemColor="separatorColor"/>
                                                     <color key="currentPageIndicatorTintColor" name="AccentColor"/>
                                                     <connections>
@@ -154,7 +154,7 @@
                                                     </connections>
                                                 </pageControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top News of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-jl-5TB">
-                                                    <rect key="frame" x="20.000000000000007" y="158" width="123.66666666666669" height="16"/>
+                                                    <rect key="frame" x="20.000000000000007" y="152.66666666666666" width="123.66666666666669" height="16"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -162,15 +162,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Lga-hX-zEE" secondAttribute="trailing" id="74S-t3-HZl"/>
-                                                <constraint firstItem="nw9-jl-5TB" firstAttribute="top" secondItem="icC-lQ-ebu" secondAttribute="bottom" constant="25" id="9de-ST-drD"/>
+                                                <constraint firstItem="nw9-jl-5TB" firstAttribute="top" secondItem="icC-lQ-ebu" secondAttribute="bottom" constant="20" id="9de-ST-drD"/>
                                                 <constraint firstAttribute="trailing" secondItem="yFv-0e-NEr" secondAttribute="trailing" constant="20" id="CKR-Ew-3BP"/>
-                                                <constraint firstItem="icC-lQ-ebu" firstAttribute="top" secondItem="xkQ-vh-Jpd" secondAttribute="bottom" constant="30" id="Hgq-Tc-YO9"/>
+                                                <constraint firstItem="icC-lQ-ebu" firstAttribute="top" secondItem="xkQ-vh-Jpd" secondAttribute="bottom" constant="28" id="Hgq-Tc-YO9"/>
                                                 <constraint firstItem="yFv-0e-NEr" firstAttribute="leading" secondItem="Vmu-as-Inc" secondAttribute="leading" constant="20" id="LW3-af-abP"/>
+                                                <constraint firstItem="Lga-hX-zEE" firstAttribute="top" secondItem="nw9-jl-5TB" secondAttribute="bottom" id="Lg8-5p-Orc"/>
                                                 <constraint firstItem="xkQ-vh-Jpd" firstAttribute="top" secondItem="Vmu-as-Inc" secondAttribute="topMargin" id="RKX-hX-T9z"/>
                                                 <constraint firstItem="Lga-hX-zEE" firstAttribute="leading" secondItem="Vmu-as-Inc" secondAttribute="leading" id="RaQ-Eb-Evb"/>
                                                 <constraint firstAttribute="bottom" secondItem="yFv-0e-NEr" secondAttribute="bottom" id="Zpd-rf-7T4"/>
                                                 <constraint firstItem="yFv-0e-NEr" firstAttribute="top" secondItem="Lga-hX-zEE" secondAttribute="bottom" id="bWg-vN-b5F"/>
-                                                <constraint firstItem="Lga-hX-zEE" firstAttribute="top" secondItem="nw9-jl-5TB" secondAttribute="bottom" constant="10" id="fJB-fh-Wcf"/>
                                                 <constraint firstItem="nw9-jl-5TB" firstAttribute="leading" secondItem="icC-lQ-ebu" secondAttribute="leading" id="mrc-Ya-hVx"/>
                                                 <constraint firstItem="xkQ-vh-Jpd" firstAttribute="leading" secondItem="Vmu-as-Inc" secondAttribute="leading" constant="20" id="sip-z0-OVd"/>
                                                 <constraint firstItem="icC-lQ-ebu" firstAttribute="leading" secondItem="Vmu-as-Inc" secondAttribute="leading" constant="20" id="vlK-hl-tpo"/>
