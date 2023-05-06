@@ -26,6 +26,22 @@ class HomeViewController: UIViewController {
         
         let refreshControl = UIRefreshControl()
         
+        if #available(iOS 13.0, *) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "gear.circle"),
+                style: .plain,
+                target: self,
+                action: nil
+            )
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                title: "Setting",
+                style: .plain,
+                target: self,
+                action: nil
+            )
+        }
+        
         self.refreshControl = refreshControl
         refreshControl.addTarget(
             self,

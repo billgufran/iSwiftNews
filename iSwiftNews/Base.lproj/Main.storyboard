@@ -212,6 +212,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="2yQ-eq-wML"/>
                     <connections>
+                        <outlet property="navigationItem" destination="2yQ-eq-wML" id="NmY-uz-ePs"/>
                         <outlet property="tableView" destination="jMr-Oo-7AO" id="S7J-p3-C59"/>
                     </connections>
                 </viewController>
