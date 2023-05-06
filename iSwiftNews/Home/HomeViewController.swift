@@ -31,6 +31,19 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         
         loadNews()
+        
+        // observe for when an item in reading list is removed
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.readingListItemDeleted(_:)),
+            name: .deleteReadingList,
+            object: nil
+        )
+    }
+    
+    @objc func readingListItemDeleted(_ sender: Any) {
+        // reloading data so the bookmark button state is updated
+        tableView.reloadData()
     }
     
     func loadNews() {
@@ -89,11 +102,37 @@ extension HomeViewController: UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "news_cell", for: indexPath) as! NewsTableViewCell
             
+            let isInReadingList = CoreDataStorage
+                .shared
+                .isAddedToReadingList(id: news.url)
+            
             // assign NewsTableViewCellDelegate
             cell.delegate = self
             
             cell.titleLabel.text = news.title
             cell.subtitleLabel.concatLabelsToText([news.publishedDate, news.source])
+            
+            if isInReadingList {
+                if #available(iOS 13.0, *) {
+                    cell.bookmarkButton.setImage(
+                        UIImage(systemName: "bookmark.fill"),
+                        for: .normal
+                    )
+                } else {
+                    // @todo handle fallback on earlier versions
+                }
+                cell.bookmarkButton.isEnabled = false
+            } else {
+                if #available(iOS 13.0, *) {
+                    cell.bookmarkButton.setImage(
+                        UIImage(systemName: "bookmark"),
+                        for: .normal
+                    )
+                } else {
+                    // @todo handle fallback on earlier versions
+                }
+                cell.bookmarkButton.isEnabled = true
+            }
             
             if news.imageUrl != "" {
                 cell.thumbImage.sd_setImage(with: URL(string: news.imageUrl))
