@@ -8,5 +8,4 @@ target 'iSwiftNews' do
   # Pods for iSwiftNews
   pod 'Alamofire'
   pod 'SDWebImage'
-  pod 'FirebaseAuth'
 end
